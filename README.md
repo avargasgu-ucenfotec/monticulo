@@ -1,2 +1,2 @@
-# monticulo
-Implementación de estructuras de datos - Montículo
+# Montículo
+Implementación de estructuras de datos

@@ -1,11 +1,48 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
+
+    static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+    public static void menuPrincipal(MinHeap monticulo) throws Exception {
+        byte opcion = -1;
+
+        do {
+            System.out.println("\n --- Menú principal --- \n");
+            System.out.println("[ 1] Insertar número entero al montículo");
+            System.out.println("[ 2] Eliminar raíz del montículo");
+            System.out.println("[ 3] Desplegar raíz del montículo");
+            System.out.println("[ 4] Crear montículo a partir de un arreglo");
+            System.out.println("[ 5] Desplegar montículo");
+            System.out.println("[ 0] Salir");
+            System.out.print("\nSeleccione una opción del menú: ");
+            try {
+                opcion = Byte.parseByte(leerTexto());
+            } catch (Exception e) {
+                System.out.println("Lo sentimos, estamos experimentando problemas técnicos.");
+            }
+            //procesarOpcion(opcion, tienda);
+        } while (opcion != 0);
+    }
+
+    public static String leerTexto() throws IOException {
+        return in.readLine();
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        //Inicializar montículo
+        MinHeap miMonticulo = new MinHeap();
+
+        //Ejecutar el menú principal
+        menuPrincipal(miMonticulo);
 
         //Instanciar montículo
-        MinHeap miMonticulo = new MinHeap();
+        /*MinHeap miMonticulo = new MinHeap();
 
         //Imprimir montículo vacío
         miMonticulo.imprimirMonticulo();
@@ -38,6 +75,6 @@ public class Main {
         System.out.println(miMonticulo.eliminarMin());
 
         //Imprimir montículo
-        miMonticulo.imprimirMonticulo();
+        miMonticulo.imprimirMonticulo();*/
     }
 }

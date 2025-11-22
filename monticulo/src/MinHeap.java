@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class MinHeap {
 
@@ -116,9 +115,10 @@ public class MinHeap {
     //Imprimir elementos del montículo
     public void imprimirMonticulo() {
         if (heap.isEmpty()) {
-            System.out.println("Montículo vacío");
+            System.out.println("\nMontículo vacío");
         }
 
+        System.out.println("\nMontículo almacenado");
         System.out.print("[ ");
         for (int e : heap) {
             System.out.print(e + " ");
@@ -126,14 +126,11 @@ public class MinHeap {
         System.out.println("]");
     }
 
-    //Converir un arreglo en un montículo
+    //Convertir un arreglo en un montículo
     public void heapify(ArrayList<Integer> arreglo) {
         if (arreglo.isEmpty()) {
             System.out.println("Arreglo vacío");
         }
-
-        //Desordenar el arreglo
-        Collections.shuffle(arreglo);
 
         //Insertar cada elemento del arreglo en el montículo
         for (int e : arreglo) {

@@ -1,0 +1,25 @@
+Aplicación de los montículos en el algoritmo de Dijkstra para la búsqueda de caminos en grafos.
+
+El algoritmo de Dijkstra es uno de los métodos más conocidos para encontrar el camino más corto en un grafo ponderado.
+
+Su funcionamiento se basa en elegir, de manera repetida, el vértice con la distancia tentativa más pequeña y actualizar
+las distancias de sus vecinos. Sin embargo, la eficiencia de este proceso depende en gran medida de la estructura de
+datos utilizada para seleccionar el vértice mínimo.
+
+Si se emplea un arreglo simple, cada extracción del mínimo requiere
+recorrer todos los vértices, lo que implica un costo de O(V)O(V) por operación y una complejidad total de O(V^2)O(V^2).
+Esto resulta poco práctico en grafos grandes, especialmente cuando son dispersos.
+
+Aquí es donde entra en juego el montículo, ya que esta estructura permite extraer el vértice con menor distancia en
+O(log(V))O(log(V)). Gracias a ello, la complejidad del algoritmo se reduce a O(Elog(V))O(Elog(V)), lo que representa una
+mejora sustancial.
+
+En grafos con muchos vértices pero relativamente pocas aristas, esta diferencia es crítica, ya que convierte a Dijkstra
+en un algoritmo eficiente y aplicable en escenarios reales como redes de transporte, sistemas de navegación GPS o
+planificación de rutas en telecomunicaciones.
+
+Referencias:
+GeeksforGeeks – Dijkstra’s Algorithm using priority_queue
+    https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-using-priority_queue-stl/
+Cornell CS Lecture Notes – Priority Queues and Heaps
+    https://www.cs.cornell.edu/courses/cs2112/2017fa/lectures/lec_heaps/
